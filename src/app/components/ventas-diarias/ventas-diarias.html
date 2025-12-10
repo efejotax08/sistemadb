@@ -1,0 +1,16 @@
+
+
+<div *ngIf="loading">
+  Cargando info...
+</div>
+
+<div *ngIf="!loading">
+  <apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [xaxis]="chartOptions.xaxis"
+    [dataLabels]="chartOptions.dataLabels"
+    [title]="chartOptions.title"
+  >
+  </apx-chart>
+</div>

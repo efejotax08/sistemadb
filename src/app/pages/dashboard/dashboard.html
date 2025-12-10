@@ -1,5 +1,178 @@
-<h2> Dashboard Testing </h2>
+<div >
+   <div class="row">
+      <div class="col">
+        <h1 class=" text-center">Bienvenido al Dashboard</h1>
+        <p class="lead text-center">Este es un resumen de tus datos más importantes.</p>
+      </div>
+    </div>
 
-<div style="max-width: 600px; margin-top: 20px;">
-  <app-chart-line></app-chart-line>
-</div>
+
+
+
+  <div class="container">
+    <!-- Fila centrada con una sola columna -->
+    <div class="row justify-content-center">
+      <!-- Columna única centrada -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="mb-3 ">
+    <label for="fechaDesde" class="form-label">Fecha Desde</label>
+    <input type="date" class="form-control" id="fechaDesde" [(ngModel)]="desde">
+  </div>
+
+  <!-- Segundo Date Picker: Fecha Hasta -->
+  <div class="mb-3">
+    <label for="fechaHasta" class="form-label">Fecha Hasta</label>
+    <input type="date" class="form-control" id="fechaHasta" [(ngModel)]="hasta">
+  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<br><hr>
+
+
+  <div class="container">
+    <!-- Primera fila con 2 columnas -->
+    <div class="row">
+      <!-- Columna 1 -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+             <app-bar-chart [desde]="desde"
+  [hasta]="hasta"
+  >
+  </app-bar-chart>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            
+            <app-ventas-diarias [desde]="desde"
+  [hasta]="hasta"
+  >
+  </app-ventas-diarias>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Segunda fila con 2 columnas -->
+    <div class="row">
+      <!-- Columna 1 -->
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            
+              <app-scatter-chart [desde]="desde"
+  [hasta]="hasta"
+  >
+  </app-scatter-chart>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" >
+<div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-warning">Feedback de Usuarios</h5>
+            <p class="card-text text-muted">Promedio de calificación de los usuarios.</p>
+            <h3 class="text-primary">4.5/5</h3>
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- Columna 2 -->
+      
+    </div>
+  </div>
+
+<hr>
+
+<div class="container">
+    <!-- Primer fila con 3 columnas -->
+    <div class="row">
+      <!-- Columna 1 -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-success">Clientes Activos</h5>
+            <p class="card-text text-muted">Cantidad de clientes que han realizado al menos una compra.</p>
+            <h3 class="text-primary">{{this.customer_count}}</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-danger">Ventas Totales</h5>
+                <p class="card-text text-muted">Ventas registradas en todo el tiempo.</p>
+            <h3 class="text-primary">{{all_time_sales}}</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-info">Visitas al Sitio</h5>
+            <p class="card-text text-muted">Número de visitas al sitio web en la última semana.</p>
+            <h3 class="text-primary">10,234</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Segunda fila con 3 columnas -->
+    <div class="row">
+      <!-- Columna 1 -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-success">Ingresos Totales</h5>
+            <p class="card-text text-muted">Total de ingresos generados .</p>
+            <h3 class="text-primary">{{all_time_profit}}</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-warning">Feedback de Usuarios</h5>
+            <p class="card-text text-muted">Promedio de calificación de los usuarios.</p>
+            <h3 class="text-primary">4.5/5</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-info">Nuevo Registro de Productos</h5>
+            <p class="card-text text-muted">Cantidad de productos vendidos al menos una vez. </p>
+            <h3 class="text-primary"> {{product_count}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  
