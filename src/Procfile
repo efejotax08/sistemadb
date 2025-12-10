@@ -1,1 +1,1 @@
-web: npm run start
+web: http-server ./dist/sistemadb/browser -p 8080 --history-api-fallback
