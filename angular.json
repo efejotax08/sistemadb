@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+             "outputPath": "dist/sistemadb",  
+            "index": "src/index.html",  
+            "main": "src/main.ts",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
